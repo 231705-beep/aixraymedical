@@ -105,7 +105,7 @@ export class UsersService implements OnModuleInit {
                     licenseNumber: profileData.licenseNumber || 'PENDING',
                     hospital: profileData.hospital || 'Main Medical Center',
                     experience: expNum,
-                    isApproved: false,
+                    isApproved: true,
                 });
             }
             await this.doctorProfileRepository.save(doctorProfile);

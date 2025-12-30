@@ -1,0 +1,221 @@
+.section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.backBtn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: color 0.3s;
+}
+
+.backBtn:hover {
+    color: #00d9ff;
+}
+
+.bookingContainer {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+}
+
+.doctorInfoCard {
+    background: rgba(10, 15, 28, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    height: fit-content;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.doctorHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(0, 217, 255, 0.1);
+    border: 3px solid #00d9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 28px;
+    color: #00d9ff;
+    margin-bottom: 1rem;
+}
+
+.specialization {
+    color: #00d9ff;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.infoList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.formCard {
+    background: rgba(10, 15, 28, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.formCard h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 2.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.inputGroup label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+}
+
+.inputGroup input[type="date"] {
+    width: 100%;
+    background: rgba(10, 15, 28, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 14px 20px;
+    color: white;
+    outline: none;
+}
+
+.slotsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.slotBtn {
+    background: rgba(10, 15, 28, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.slotBtn:hover {
+    border-color: #00d9ff;
+    color: #ffffff;
+}
+
+.selectedSlot {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: #00d9ff;
+    color: #00d9ff;
+}
+
+.paymentNotice {
+    background: rgba(0, 217, 255, 0.05);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.paymentHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #00d9ff;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.paymentNotice p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.error {
+    color: #ef4444;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.submitBtn {
+    background: linear-gradient(135deg, #00d9ff, #0099cc);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 25px rgba(0, 217, 255, 0.3);
+}
+
+.submitBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 217, 255, 0.5);
+}
+
+.submitBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 992px) {
+    .bookingContainer {
+        grid-template-columns: 1fr;
+    }
+}

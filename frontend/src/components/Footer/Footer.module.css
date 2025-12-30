@@ -1,0 +1,45 @@
+.footer {
+    padding: 4rem;
+    background: #020617;
+    color: var(--white);
+    text-align: center;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    text-align: left;
+}
+
+.footerGrid h3,
+.footerGrid h4 {
+    margin-bottom: 1rem;
+}
+
+.footerGrid p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    opacity: 0.6;
+}
+
+.adminLink {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    color: white;
+}
+
+.adminLink:hover {
+    opacity: 1;
+}

@@ -1,0 +1,86 @@
+.section {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(10, 15, 28, 0.9), rgba(10, 15, 28, 0.9)), url('../../../assets/portal-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 2rem;
+    color: #fff;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tableContainer {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.adminTable th {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 1px;
+}
+
+.adminTable td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.adminTable tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.actionBtn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+.actionBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #38bdf8;
+    color: white;
+    transform: translateY(-1px);
+}

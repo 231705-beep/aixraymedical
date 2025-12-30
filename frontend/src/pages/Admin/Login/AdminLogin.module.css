@@ -1,0 +1,178 @@
+.container {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../../assets/portal-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    padding: 20px;
+    animation: portalFadeIn 1s ease-out;
+}
+
+@keyframes portalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.loginCard {
+    background: rgba(10, 15, 28, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 420px;
+    width: 100%;
+    color: #fff;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6), 0 0 50px rgba(0, 217, 255, 0.05);
+    animation: cardSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cardSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.iconWrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.3));
+}
+
+.loginCard h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.loginCard p {
+    font-size: 0.85rem;
+    margin-bottom: 2.5rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pinDisplay {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    font-size: 2.5rem;
+    letter-spacing: 1rem;
+    border: 1px dashed rgba(0, 217, 255, 0.4);
+    border-radius: 12px;
+    color: #00d9ff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.pinDisplay:not(:empty) {
+    border-style: solid;
+    border-color: #00d9ff;
+    background: rgba(0, 217, 255, 0.05);
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.keypad button {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    padding: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.keypad button:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 217, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.keypad button:active {
+    transform: translateY(0);
+}
+
+.clearBtn {
+    grid-column: span 2;
+    color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.05) !important;
+    border-color: rgba(239, 68, 68, 0.2) !important;
+}
+
+.clearBtn:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: #ef4444 !important;
+}
+
+.accessBtn {
+    background: linear-gradient(45deg, #00d9ff, #0088ff);
+    color: #000;
+    border: none;
+    padding: 1.25rem;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.accessBtn:disabled {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.accessBtn:not(:disabled):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 217, 255, 0.3);
+}
+
+.accessBtn:not(:disabled):active {
+    transform: translateY(-1px);
+}

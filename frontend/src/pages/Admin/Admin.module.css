@@ -1,0 +1,79 @@
+.section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.statCard {
+    background: #1e293b;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.tableContainer {
+    background: #1e293b;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.adminTable th,
+.adminTable td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+}
+
+.adminTable th {
+    background: #334155;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+}
+
+.badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.actionBtn {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    transition: all 0.2s;
+    background: none;
+    cursor: pointer;
+}
+
+.actionBtn:hover {
+    border-color: #38bdf8;
+    color: white;
+}

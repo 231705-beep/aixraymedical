@@ -1,0 +1,291 @@
+.landing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 10rem 0 10rem;
+    background: transparent;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.heroContent {
+    max-width: 550px;
+    z-index: 10;
+    text-align: left;
+    margin-top: -20px;
+}
+
+.heroContent h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.heroContent p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 480px;
+}
+
+.featureCard h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #00d9ff;
+}
+
+.heroGraphic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2000px;
+    padding-top: 20px;
+}
+
+.lungsImage {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.5)) contrast(1.2);
+}
+
+.landingContainer {
+    min-height: 100vh;
+    background: url('../../assets/portal-background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+@keyframes backgroundDrift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.landingContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(0, 217, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(0, 153, 204, 0.06) 0%, transparent 50%);
+    animation: pulseGlow 10s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.cta {
+    padding: 1rem 2.8rem;
+    background: linear-gradient(135deg, #00d9ff, #0099cc);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+}
+
+.cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 217, 255, 0.5);
+}
+
+.stepItem {
+    padding: 0;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.stepItem h3 {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 0.2rem !important;
+}
+
+.stepItem p {
+    color: #94a3b8;
+    margin-top: 0 !important;
+}
+
+.featureCard:hover {
+    background: rgba(13, 20, 35, 0.82);
+    border-color: rgba(0, 217, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 217, 255, 0.3);
+}
+
+.section {
+    height: 100vh;
+    padding: 90px 10rem 0 10rem;
+    color: white;
+    position: relative;
+    /* Contain zoomed lungs */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Top align to respect padding */
+    text-align: center;
+}
+
+#features.section {
+    background: transparent;
+}
+
+.howItWorksGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 0.2rem;
+    align-items: center;
+    position: relative;
+    height: auto;
+    z-index: 5;
+    margin-top: 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* Base shift up */
+}
+
+
+.rightColumn {
+    /* Combined base shift + previous shift */
+}
+
+.centerSpacer {
+    height: 100%;
+    min-height: 120px;
+}
+
+.lungsImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.5)) contrast(1.2);
+}
+
+/* Ensure fixed lungs don't block clicks */
+.fixedLungsContainer {
+    pointer-events: none;
+}
+
+.heroGraphicSpacer {
+    flex: 1;
+    min-width: 300px;
+    height: 500px;
+}
+
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    position: relative;
+    z-index: 20;
+    /* Reduced gap significantly */
+}
+
+.card {
+    background: rgba(10, 15, 28, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 217, 255, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.featureCard {
+    background: rgba(10, 15, 28, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 217, 255, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    background: rgba(13, 20, 35, 0.82);
+    border-color: rgba(0, 217, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 217, 255, 0.3);
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 4rem 2rem;
+        text-align: center;
+    }
+
+    .heroContent {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .heroContent h1 {
+        font-size: 2.5rem;
+    }
+
+    .heroGraphic {
+        margin-top: 3rem;
+    }
+}

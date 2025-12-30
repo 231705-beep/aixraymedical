@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-color: #00d9ff;
+  --primary-dark: #0088ff;
+  --primary-light: rgba(0, 217, 255, 0.1);
+  --secondary-color: #2563EB;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --bg-dark: #050810;
+  --bg-card: rgba(10, 15, 28, 0.7);
+  --white: #FFFFFF;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --radius: 12px;
+}
+
+/* Global Dropdown Fix */
+select option {
+  background-color: #0a0f1c;
+  color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}

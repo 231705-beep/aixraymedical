@@ -1,0 +1,246 @@
+/* PATIENT LAYOUT STYLES - CINEMATIC MATCH */
+
+.layout {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(5, 8, 16, 0.75), rgba(5, 8, 16, 0.75)), url('../../assets/doctor-bg.png');
+    background-size: 130% 130%;
+    animation: moveBackground 30s ease-in-out infinite alternate;
+    display: flex;
+}
+
+.layout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(0, 217, 255, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 70% 80%, rgba(0, 136, 255, 0.08) 0%, transparent 45%);
+    animation: pulseGlow 15s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 50% 50%;
+    }
+
+    100% {
+        background-position: 50% 88%;
+    }
+}
+
+@keyframes backgroundDrift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ==================== SIDEBAR (TRANSPARENT GLASS) ==================== */
+.sidebar {
+    width: 260px;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(16px);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarLogo {
+    padding: 0 24px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #00d9ff;
+    letter-spacing: 1px;
+}
+
+.navMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px;
+    flex: 1;
+}
+
+.navItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.navItem::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 217, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.navItem:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
+.navItem:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.activeNavItem {
+    color: #00d9ff !important;
+    background: rgba(0, 217, 255, 0.05) !important;
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+    animation: navGlow 2s ease-in-out infinite;
+}
+
+@keyframes navGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
+    }
+}
+
+.logoutBtn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    margin-top: auto;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.logoutBtn:hover {
+    color: #ffffff;
+}
+
+/* ==================== CONTENT ==================== */
+.mainContent {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    height: 100vh;
+    padding: 10px 50px 30px 50px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #94a3b8;
+    margin: 10px 0 0 0;
+    font-weight: 500;
+}
+
+.profileInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 80px;
+    }
+
+    .mainContent {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+        padding: 20px;
+    }
+
+    .navItem span,
+    .sidebarLogo,
+    .logoutBtn span {
+        display: none;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+}

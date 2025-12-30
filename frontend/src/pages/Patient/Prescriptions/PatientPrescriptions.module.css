@@ -1,0 +1,122 @@
+.section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.statValue {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0.5rem 0;
+}
+
+.badgeSuccess {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.badgeWarning {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.badgeDanger {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.uploadCard {
+    background: white;
+    padding: 3rem;
+    border-radius: 24px;
+    border: 2px dashed var(--border-color);
+    text-align: center;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.uploadCard:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-light);
+}
+
+.previewImage {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 12px;
+    margin-top: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.submitBtn:hover {
+    background: #0d47a1;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background: var(--primary-light);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}

@@ -1,0 +1,108 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal {
+    background: #000000;
+    /* Very dark blue/black */
+    padding: 3rem 4rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid #1e293b;
+    text-align: center;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.closeBtn:hover {
+    color: white;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.continueText {
+    color: #94a3b8;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.roleActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.patientBtn {
+    background: #3b82f6;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.patientBtn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.doctorBtn {
+    background: transparent;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 1px solid #334155;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.doctorBtn:hover {
+    background: #0f172a;
+    border-color: #475569;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+    .modal {
+        margin: 1rem;
+        padding: 2rem;
+    }
+
+    .roleActions {
+        grid-template-columns: 1fr;
+    }
+}

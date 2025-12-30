@@ -1,0 +1,156 @@
+.adminContainer {
+    min-height: 100vh;
+    display: flex;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+.sidebar {
+    width: 250px;
+    background: #1e293b;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    border-right: 1px solid #334155;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebarLogo {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #38bdf8;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.navMenu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.navItem:hover {
+    background: #334155;
+    color: white;
+}
+
+.activeNavItem {
+    background: #38bdf8 !important;
+    color: white !important;
+}
+
+.mainContent {
+    flex: 1;
+    margin-left: 250px;
+    padding: 2.5rem;
+}
+
+.section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.statCard {
+    background: #1e293b;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.tableContainer {
+    background: #1e293b;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.adminTable th,
+.adminTable td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+}
+
+.adminTable th {
+    background: #334155;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+}
+
+.adminTable tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.badgePrimary {
+    background: #38bdf81a;
+    color: #38bdf8;
+}
+
+.badgeSuccess {
+    background: #10b9811a;
+    color: #10b981;
+}
+
+.badgeDanger {
+    background: #ef44441a;
+    color: #ef4444;
+}
+
+.actionBtn {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    transition: all 0.2s;
+}
+
+.actionBtn:hover {
+    border-color: #38bdf8;
+    color: white;
+}

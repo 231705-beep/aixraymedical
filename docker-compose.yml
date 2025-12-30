@@ -1,0 +1,54 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: ai-xray-db
+    restart: always
+    environment:
+      POSTGRES_USER: ai_backend_user
+      POSTGRES_PASSWORD: saad123
+      POSTGRES_DB: ai_xray_health
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-xray-backend
+    restart: always
+    ports:
+      - "3001:3001"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USERNAME=ai_backend_user
+      - DB_PASSWORD=saad123
+      - DB_DATABASE=ai_xray_health
+      - JWT_SECRET=super_secret_jwt_key_change_in_production
+      - JWT_EXPIRATION=1d
+      - PORT=3001
+      - EMAIL_HOST=smtp.gmail.com
+      - EMAIL_PORT=587
+      - EMAIL_USER=khattaksaad042@gmail.com
+      - EMAIL_PASS=mtqnmyueyohzkcea
+      - EMAIL_FROM="AI X-Ray Health" <khattaksaad042@gmail.com>
+    depends_on:
+      - db
+    volumes:
+      - ./backend/uploads:/app/uploads
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ai-xray-frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

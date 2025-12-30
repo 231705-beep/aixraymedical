@@ -1,0 +1,22 @@
+app = "ai-xray-backend-rida"
+primary_region = "sin"
+
+[build]
+  image = "student-backend:latest"
+
+[env]
+  NODE_ENV = "production"
+  PORT = "3001"
+  DB_PORT = "5432"
+
+[http_service]
+  internal_port = 3001
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
